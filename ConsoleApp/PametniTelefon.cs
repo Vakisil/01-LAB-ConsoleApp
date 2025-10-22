@@ -1,30 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-    public class ElektronickiUredjaj
-    {
-        public string Naziv { get; set; }
-        public string Proizvodjac { get; set; }
-        public int GodinaProizvodnje { get; set; }
-
-        public ElektronickiUredjaj(string naziv, string proizvodjac, int godinaProizvodnje)
-        {
-            Naziv = naziv;
-            Proizvodjac = proizvodjac;
-            GodinaProizvodnje = godinaProizvodnje;
-        }
-    }
-    public class PametniTelefon : ElektronickiUredjaj
+    public class PametniTelefon : ElektronickiUredjaji
     {
         public string OperativniSustav { get; set; }
-
-        public PametniTelefon(string naziv, string proizvodjac, int godinaProizvodnje, string operativniSustav)
-            : base(naziv, proizvodjac, godinaProizvodnje)
+        public PametniTelefon(string naziv, string proizvodac, int godinaProizvodnje, string operativniSustav)
+            : base(naziv, proizvodac, godinaProizvodnje)
         {
             OperativniSustav = operativniSustav;
         }
     }
-}
-
 }

@@ -1,14 +1,21 @@
 ﻿namespace ConsoleApp
 {
-    internal class Program
+    public class ProizvodBase
     {
-        static void Main(string[] args)
+        public string Naziv { get; set; }
+        public decimal Cijena { get; set; }
+        public int DostupnaKolicina { get; set; }
+
+        public ProizvodBase(string naziv, decimal cijena, int dostupnaKolicina)
         {
-            Console.WriteLine("Hello world");
-            Proizvod proizvod1 = new Proizvod("laptop", 1200.50m, 10);
-            Proizvod proizvod2 = new Proizvod("racunLO", 1200.50M, 20);
-            proizvod1.IspisiInformacije();
-            proizvod2.IspisiInformacije();
+            Naziv = naziv;
+            Cijena = cijena;
+            DostupnaKolicina = dostupnaKolicina;
+        }
+
+        public virtual void PrikazInformacije()
+        {
+            Console.WriteLine($"Naziv: {Naziv}, Cijena: {Cijena} € , Dostupna količina: {DostupnaKolicina}");
         }
     }
 }
